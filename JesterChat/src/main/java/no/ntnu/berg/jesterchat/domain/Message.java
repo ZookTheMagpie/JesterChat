@@ -3,10 +3,10 @@ package no.ntnu.berg.jesterchat.domain;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -18,14 +18,13 @@ import lombok.NoArgsConstructor;
 
 /**
  *
- * @author Alexander Eilert Berg
+ * @author mikael
  */
 @Data @NoArgsConstructor
 @XmlRootElement
 @XmlAccessorType(XmlAccessType.FIELD)
 @Entity
-public class Message implements Serializable
-{
+public class Message implements Serializable {
     @Id @GeneratedValue
     Long id;
     
@@ -38,10 +37,9 @@ public class Message implements Serializable
     
     @XmlTransient
     @ManyToOne(optional = false,cascade = CascadeType.PERSIST)
-    Conversation conversation; 
-    
-    public Message(String user, String text)
-    {
+    Conversation conversation;
+
+    public Message(String user, String text) {
         this.user = user;
         this.text = text;
     }

@@ -7,23 +7,22 @@ import javax.ws.rs.core.Application;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 /**
- * 
- * @author Alexander Eilert Berg
+ *
+ * @author mikael
  */
 @ApplicationPath("api")
-public class RestConfig extends Application
-{
+public class RestConfig extends Application {
+
     @Override
-    public Set<Class<?>> getClasses()
-    {
+    public Set<Class<?>> getClasses() {
         Set<Class<?>> resources = new HashSet<>();
         resources.add(MultiPartFeature.class);
-        addRestResourceClasses (resources);
+        addRestResourceClasses(resources);
         return resources;
     }
     
-    private void addRestResourceClasses(Set<Class<?>> resources) 
-    {
-        resources.add(no.ntnu.berg.jesterchat.ForumService.class);
+    private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(no.ntnu.berg.jesterchat.ForumServices.class);
+        resources.add(no.ntnu.berg.jesterchat.PictureService.class);
     }
 }
