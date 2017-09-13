@@ -25,6 +25,5 @@ public class RestConfig extends Application
     private void addRestResourceClasses(Set<Class<?>> resources) 
     {
         resources.add(no.ntnu.berg.jesterchat.ForumService.class);
-        resources.add(no.ntnu.berg.jesterchat.PictureService.class);
     }
 }
