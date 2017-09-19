@@ -12,7 +12,7 @@ function getMessages() {
         })
         .catch(e=>console.log(e));
 
-    setTimeout("getMessages()",1000);
+    setTimeout("getMessages()",250);
 }
 
 self.addEventListener("message", event => {
