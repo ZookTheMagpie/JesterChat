@@ -1,0 +1,52 @@
+
+body 
+{
+    text-align:center;
+    background-color: lightgrey;
+}
+
+#chamber {
+    text-align: left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background-color: grey;
+    height:270px;
+    width:430px;
+    border:2px solid #00613e;
+    overflow-y: scroll; 
+
+    font-size: 125%
+}
+
+#message {
+    padding: 1px;
+    width:395px;
+    border:1px solid black;
+}
+
+#username
+{
+    padding: 1px;
+    margin: 1%;
+    border:1px solid black;
+}
+
+ul
+{   
+    list-style-type: none; 
+    padding: 0px; 
+    margin: 0px;
+    text-align: center;
+}
+
+li
+{   
+    text-align: center;
+    margin: 2%;
+    padding: 1%;
+    border: 1px solid #00613e;
+    border-radius: 9%;
+    background-color: lightgray;
+    width: auto;
+}

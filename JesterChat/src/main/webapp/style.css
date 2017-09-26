@@ -1,40 +1,25 @@
 * {margin:0;padding:0}
 html,body {
+    text-align: center;
     width: 100vw;
     height: 100vh;
-}
-
-h1{
-    text-align: center
-}
-
-.forumBox {
-    display: inline-block;
-    position: relative;
-    margin: 1%;
-    float: left;
-    width: 23%;
-    height: 400px;
     background-color: lightgrey;
 }
 
-a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
+h1{
+    text-align: center;
+    padding: 2%;
 }
 
-.ribbon {
-  width: 0;
-  height: 100px;
-  
-  border: 50px solid #8C001A;
-  border-top: 0 solid;
-  border-bottom: 35px solid rgba(0,0,0,0);
-  
-  font: normal 100%/normal Arial, Helvetica, sans-serif; 
-  text-overflow: ellipse;
+a:link, a:visited {
+    background-color: #00613e;
+    color: silver;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    background-color: #00750e;
 }

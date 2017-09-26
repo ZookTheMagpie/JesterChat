@@ -1,18 +1,19 @@
 
-class Forum {
+class Chamber {
    constructor() {
-       this.forum = document.querySelector("#forum");
+       this.chamber = document.querySelector("#chamber");
        this.message = document.querySelector("#message");
        
        
        this.name = new URL(document.URL).searchParams.get("name");
-       this.loadImage(this.name);
+       this.loadRoomName(this.name); //The problem
        
+
        this.message.onchange = event => {
-          fetch('api/messages/add?name=' + this.name,
+          fetch('api/messages/add?name=' + this.name, 
             {
              method: 'POST', 
-             body : JSON.stringify(new Message('Guest',event.target.value)),
+             body : JSON.stringify(new Message(document.getElementById("username").value,event.target.value)),
              headers: {'Content-Type' : 'application/json; charset=UTF-8'}
             })
            .then(response => {
@@ -32,18 +33,26 @@ class Forum {
        this.worker.postMessage({"name" : this.name});
        
        this.worker.onmessage = event => {
-           this.forum.innerHTML = '';
+           this.chamber.innerHTML = '';
            let ul = document.createElement('ul');
            event.data.map(message => {
               let li = document.createElement('li');
               li.innerHTML = `${message.user} - ${message.text}`;
-              ul.appendChild(li);
+              ul.appendChild
+              (li);
            });
-           this.forum.appendChild(ul);
-           this.forum.scrollTop = this.forum.scrollHeight;
+           this.chamber.appendChild(ul);
+           this.chamber.scrollTop = this.chamber.scrollHeight;
        };       
    } 
    
+   loadRoomName(name)
+   {
+       var h = document.createElement("H1");
+       var txt = document.createTextNode(name);
+       h.appendChild(txt);
+       document.body.appendChild(h);   
+   }
 }
 
 class Message {
@@ -54,6 +63,6 @@ class Message {
     }
 }
 
-let forum = new Forum();
+let chamber = new Chamber();
 
 
